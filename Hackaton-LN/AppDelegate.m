@@ -17,6 +17,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if (![defaults objectForKey:@"prefLectura"]) {
+        [defaults setObject:@(3) forKey:@"prefLectura"];
+        [defaults synchronize];
+    }
     return YES;
 }
 

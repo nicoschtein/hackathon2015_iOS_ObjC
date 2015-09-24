@@ -2,12 +2,12 @@
 //  TweetView.m
 //  Canchallena
 //
-//  Created by Juan Manuel Abrigo on 5/30/14.
-//  Copyright (c) 2014 Lateral View. All rights reserved.
+//  Created by Carlos Garcia on 5/30/14.
+//  Copyright (c) 2014 La Nacion. All rights reserved.
 //
 
 #import "TweetView.h"
-#import "LvHttpClient.h"
+//#import "LvHttpClient.h"
 
 @interface TweetView (){
     int nroRequest;
@@ -39,7 +39,7 @@
     self.delegate = self;
     nroRequest = 0;
     
-    LvHttpClient *client = [[LvHttpClient alloc]initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1/"]];
+    /*LvHttpClient *client = [[LvHttpClient alloc]initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1/"]];
     
     [client getMethod:[NSString stringWithFormat:@"statuses/oembed.json?id=%@&align=center&maxwidth=%f", tweetId, [UIScreen mainScreen].bounds.size.width] withParams:nil response:^(id object, NSError *error) {
         if (!error) {
@@ -56,7 +56,7 @@
             DLog(@"HTML: %@", html);
             [self loadHTMLString:html baseURL:nil];
         }
-    }];
+    }];*/
     
 //    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1/"]];
 //    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET"

@@ -2,21 +2,27 @@
 //  NoteViewController.m
 //  Canchallena
 //
-//  Created by Juan Manuel Abrigo on 3/31/14.
-//  Copyright (c) 2014 Lateral View. All rights reserved.
+//  Created by Carlos Garcia on 3/31/14.
+//  Copyright (c) 2014 La Nacion. All rights reserved.
 //
 
 #import "NoteViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import "LvYouTubeView.h"
+//#import "LvYouTubeView.h"
 #import "YTPlayerView.h"
 #import "TweetView.h"
 #import "TextualesView.h"
 #import "GalleryView.h"
 #import "ImageView.h"
 #import "MiniLiveView.h"
-#import "LiveController.h"
-#import "CommentsViewController.h"
+//#import "LiveController.h"
+//#import "CommentsViewController.h"
+#import "AFNetworking.h"
+
+
+#define IMGW 640
+static NSString * const NOTA_URL = @"http://contenidos.lanacion.com.ar/json/nota/";
+
 
 @interface NoteViewController (){
     UIView *noteView;
@@ -46,12 +52,29 @@
     
     self.navigationController.navigationBar.topItem.title = @"";
     
-    [[CanchallenaJsonAPI shared]getNote:_noteId response:^(id object, NSError *error) {
+    /*[[CanchallenaJsonAPI shared]getNote:_noteId response:^(id object, NSError *error) {
         if (!error) {
             //DLog(@"NOTE: %@", [object description]);
             note = object;
             [self generateNoteView];
         }
+    }];*/
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //NSDictionary *parameters = @{@"foo": @"bar"};
+    [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+    [manager POST:[NSString stringWithFormat:@"%@%@", NOTA_URL, self.noteId] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError* error;
+        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                             options:kNilOptions
+                                                               error:&error];
+        
+        note = json;
+        [self generateNoteView];
+        NSLog(@"Se trajo la nota");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        
+        
     }];
     
 }
@@ -250,7 +273,7 @@
             
         }else
         if ([type isEqualToString:@"des"]){
-            DLog(@"des");
+            //DLog(@"des");
             
             ShareView *shareView = [[ShareView alloc]init]; // h= 140
             shareView.delegate = self;
@@ -313,7 +336,7 @@
                     yy = yy + imageView.frame.size.height + 10;
                 }
                 else if ([type isEqualToString:@"textual"]){
-                    DLog(@"textual");
+                    //DLog(@"textual");
                     
                     
                     TextualesView *textualView = [[TextualesView alloc]init]; // h= 140
@@ -325,7 +348,7 @@
                     
                 }
                 else if ([type isEqualToString:@"des"]){
-                    DLog(@"des");
+                    //DLog(@"des");
                     
                     ShareView *shareView = [[ShareView alloc]init]; // h= 140
                     shareView.delegate = self;
@@ -416,7 +439,7 @@
                         
                 }
                 else if ([type isEqualToString:@"enc"]){
-                    DLog(@"enc");
+                    //DLog(@"enc");
                     NSNumber *idTenis = [NSNumber numberWithInt:2];
                     if (![note[@"encuentros"][0][@"campeonato"][@"deporteId"] isEqualToNumber:idTenis]){
                         MiniLiveView *encView = [[MiniLiveView alloc]init]; // h= 134
@@ -460,7 +483,7 @@
                         
                 }else
                 if ([type isEqualToString:@"ul"]){
-                        DLog(@"ul: %@", newItem);
+                        //DLog(@"ul: %@", newItem);
                     id valor = newItem[@"valor"];
                     if ([valor isKindOfClass:[NSArray class]]) {
                         for (NSDictionary *element in valor) {
@@ -524,7 +547,7 @@
                     }
                 }else
                     if ([type isEqualToString:@"ext"]){
-                        DLog(@"ext %@", newItem);
+                        //DLog(@"ext %@", newItem);
                         id valor = newItem[@"valor"];
                         if ([valor isKindOfClass:[NSArray class]]) {
                             NSArray *itemList = valor;
@@ -632,7 +655,7 @@
     yy = yy + 50;
     
     UIView *blueView = [[UIView alloc]initWithFrame:CGRectMake(0, yy, [UIScreen mainScreen].bounds.size.width, 900)];
-    blueView.backgroundColor = [UIColor colorWithHex:@"49ACC5" alpha:1.0];
+    //blueView.backgroundColor = [UIColor colorWithHex:@"49ACC5" alpha:1.0];
     [noteView addSubview:blueView];
     yy = yy + 5;
     
@@ -642,10 +665,7 @@
 }
 
 - (void)gotoComments{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    CommentsViewController *commentsController = [storyboard instantiateViewControllerWithIdentifier:@"commentsViewController"];
-    commentsController.articleId = [NSString stringWithFormat:@"%@", note[@"entrada_id"]];
-    [self.navigationController pushViewController:commentsController animated:YES];
+    
 }
 
 - (void)youTubeVideoViewController:(PBYouTubeVideoViewController *)viewController didReceiveEventNamed:(NSString *)eventName eventData:(NSString *)eventData
@@ -679,24 +699,7 @@
 }
 
 - (void)gotoLive{
-    if (![encuentroId isEqualToString:@""]) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        LiveController *liveController = [storyboard instantiateViewControllerWithIdentifier:@"liveController"];
-        
-        
-        
-        
-        //Harcodeo para testeo de un EncuentroID
-        liveController.encuentroId = [NSString stringWithFormat:@"%@", encuentroId];
     
-//        liveController.encuentroId = [NSString stringWithFormat:@"126078"];
-        
-        
-        
-        
-        
-        [self.navigationController pushViewController:liveController animated:TRUE];
-    }
 }
 
 #pragma mark - Textual Delegate

@@ -2,8 +2,8 @@
 //  UIImageView+Extended.m
 //  LvKit
 //
-//  Created by Leandro on 1/10/14.
-//  Copyright (c) 2014 Lateral View. All rights reserved.
+//  Created by Carlos Garcia on 1/10/14.
+//  Copyright (c) 2014 La Nacion. All rights reserved.
 //
 
 #import "UIImageView+Extended.h"

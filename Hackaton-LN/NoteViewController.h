@@ -2,14 +2,15 @@
 //  NoteViewController.h
 //  Canchallena
 //
-//  Created by Juan Manuel Abrigo on 3/31/14.
-//  Copyright (c) 2014 Lateral View. All rights reserved.
+//  Created by Carlos Garcia on 3/31/14.
+//  Copyright (c) 2014 La Nacion. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "PBYouTubeVideoViewController.h"
 #import "TextualesView.h"
 #import "ShareView.h"
+#import "UIImageView+Extended.h"
 
 @interface NoteViewController : UIViewController <PBYouTubeVideoViewControllerDelegate, TextualesViewDelegate, ShareViewDelegate>
 

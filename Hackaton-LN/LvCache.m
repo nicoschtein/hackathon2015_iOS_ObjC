@@ -2,8 +2,8 @@
 //  LvCache.m
 //  Zupa
 //
-//  Created by Juan Manuel Abrigo on 7/30/13.
-//  Copyright (c) 2013 Lateral View. All rights reserved.
+//  Created by Carlos Garcia on 7/30/13.
+//  Copyright (c) 2013 La Nacion. All rights reserved.
 //
 
 #import "LvCache.h"

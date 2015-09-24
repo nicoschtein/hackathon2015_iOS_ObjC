@@ -1,0 +1,223 @@
+BlueButton {
+    background-color: #3B5998;
+    background-color-highlighted: #9B9B9B;
+    border-color: #777777;
+    border-width: 0;
+    text-color: #FFFFFF;
+    font-size: 16;
+    corner-radius: 2;
+    font: FredokaOne-Regular;
+}
+
+Input {
+    background-color: #F3F3F3;
+    border-color: #D4D4D4;
+    border-width: 1;
+    text-color: #4A4A4A;
+    font-size: 16;
+    corner-radius: 2;
+    font: Quicksand-Regular;
+}
+
+MenuLabel {
+    text-color: #FFFFFF;
+    font-size: 18;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+MenuLabelSelected {
+    text-color: #F43900;
+    font-size: 18;
+    font: HelveticaNeue-Medium;
+    background-color: Clear;
+}
+
+BigCellCategoryLabel {
+    text-color: #FFFFFF;
+    font-size: 13;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+BigCellTitleLabel {
+    text-color: #FFFFFF;
+    font-size: 21;
+    font: ArchivoNarrow-Regular;
+    background-color: Clear;
+}
+
+CellCategoryLabel {
+    text-color: #0081BF;
+    font-size: 13;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+CellTitleLabel {
+    text-color: #222222;
+    font-size: 21;
+    font: ArchivoNarrow-Regular;
+    background-color: Clear;
+}
+
+NoteH1Label{
+    text-color: #222222;
+    font-size: 21;
+    font: ArchivoNarrow-Regular;
+    background-color: Clear;
+}
+
+NoteTemaLabel{
+    text-color: #F43900;
+    font-size: 13;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+NoteAutorLabel{
+    text-color: #0081BF;
+    font-size: 13;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+NotePLabel{
+    text-color: #222222;
+    font-size: 18;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+NoteBLabel{
+    text-color: #222222;
+    font-size: 18;
+    font: HelveticaNeue-Bold;
+    background-color: Clear;
+}
+
+NoteSubLabel{
+    text-color: #222222;
+    font-size: 20;
+    font: HelveticaNeue-Medium;
+    background-color: Clear;
+}
+
+NoteBajadaLabel{
+    text-color: #4A4A4A;
+    font-size: 16;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+NoteEpiLabel{
+    text-color: #4A4A4A;
+    font-size: 13;
+    font: HelveticaNeue-LightItalic;
+    background-color: Clear;
+}
+
+FixtureHeaderLabel {
+    text-color: #4A4A4A;
+    font-size: 14;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+TeamNameLabel {
+    text-color: #222222;
+    font-size: 16;
+    font: ArchivoNarrow-Regular;
+    background-color: Clear;
+}
+
+ScoresLabel {
+    text-color: #F43900;
+    font-size: 21;
+    font: ArchivoNarrow-Regular;
+    background-color: Clear;
+}
+
+StatusLabel {
+    text-color: #F43900;
+    font-size: 12;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+PositionNumberLabel {
+    text-color: #4A4A4A;
+    font-size: 14;
+    font: HelveticaNeue-Bold;
+    background-color: Clear;
+}
+
+PositionTeamLabel {
+    text-color: #222222;
+    font-size: 14;
+    font: ArchivoNarrow-Regular;
+    background-color: Clear;
+}
+
+PositionPtsLabel {
+    text-color: #F43900;
+    font-size: 16;
+    font: HelveticaNeue-Bold;
+    background-color: Clear;
+}
+
+PositionStatsLabel {
+    text-color: #222222;
+    font-size: 14;
+    font: HelveticaNeue;
+    background-color: Clear;
+}
+
+TitleMenuLabel {
+    text-color: #FFFFFF;
+    font-size: 14;
+    font: HelveticaNeue-Bold;
+    background-color: Clear;
+}
+
+IssuesLabel {
+    text-color: #222222;
+    font-size: 14;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+IssuesGreenLabel {
+    text-color: #558A03;
+    font-size: 14;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+IssuesRedLabel {
+    text-color: #BE0004;
+    font-size: 14;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+IssuesOrangeLabel {
+    text-color: #E16039;
+    font-size: 14;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+TimeLabel {
+    text-color: #9B9B9B;
+    font-size: 12;
+    font: HelveticaNeue-Light;
+    background-color: Clear;
+}
+
+QuoteLabel {
+    text-color: #222222;
+    font-size: 21;
+    font: ArchivoNarrow-Regular;
+    background-color: Clear;
+}

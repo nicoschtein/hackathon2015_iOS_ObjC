@@ -2,11 +2,15 @@
 //  ImageView.m
 //  Canchallena
 //
-//  Created by Juan Manuel Abrigo on 6/1/14.
-//  Copyright (c) 2014 Lateral View. All rights reserved.
+//  Created by Carlos Garcia on 6/1/14.
+//  Copyright (c) 2014 La Nacion. All rights reserved.
 //
 
 #import "ImageView.h"
+#import "UIImageView+Extended.h"
+#define IMGW 640
+#define IMGH 424
+
 
 @interface ImageView (){
     IBOutlet UILabel *epigrafeLbl;

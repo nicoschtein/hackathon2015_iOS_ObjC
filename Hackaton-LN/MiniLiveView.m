@@ -2,11 +2,12 @@
 //  MiniLiveView.m
 //  Canchallena
 //
-//  Created by Juan Manuel Abrigo on 6/1/14.
-//  Copyright (c) 2014 Lateral View. All rights reserved.
+//  Created by Carlos Garcia on 6/1/14.
+//  Copyright (c) 2014 La Nacion. All rights reserved.
 //
 
 #import "MiniLiveView.h"
+#import "UIImageView+Extended.h"
 
 @interface MiniLiveView (){
     int status;
@@ -103,7 +104,7 @@
 
 - (void)loadWithId:(NSString*)encuentroId{
     
-    [[CanchallenaJsonAPI shared] getLiveWithId:encuentroId response:^(id object, NSError *error) {
+   /* [[CanchallenaJsonAPI shared] getLiveWithId:encuentroId response:^(id object, NSError *error) {
         if (!error) {
             status = [object[@"encuentro"][@"estado"] intValue];
             //NSArray *teams = object[@"equiposArray"];
@@ -197,7 +198,7 @@
             
             //}
         }
-    }];
+    }];*/
 }
 
 @end
