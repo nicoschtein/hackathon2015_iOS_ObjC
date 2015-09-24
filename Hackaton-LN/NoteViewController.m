@@ -342,7 +342,11 @@ static NSString * const NOTA_URL = @"http://contenidos.lanacion.com.ar/json/nota
                     TextualesView *textualView = [[TextualesView alloc]init]; // h= 140
                     textualView.delegate = self;
                     textualView.frame = CGRectMake(0, yy, [UIScreen mainScreen].bounds.size.width, 140);
-                    textualView.textLbl.text = newItem[@"valor"];
+                    for (id content in newItem[@"valor"]) {
+                        if ([content isKindOfClass:[NSString class]]) {
+                            textualView.textLbl.text = (NSString*) content;
+                        }
+                    }
                     [noteView addSubview:textualView];
                     yy = yy + 156 + 10;
                     
